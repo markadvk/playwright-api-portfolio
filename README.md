@@ -1,111 +1,139 @@
-🎯 Playwright API Automation Portfolio
-Welcome to my API Automation Testing Framework built with Playwright ⚡
-This project demonstrates my ability to design scalable, maintainable, and client-ready API test frameworks.
+# 🚀 Playwright API Test Automation Framework
+A **robust**, **scalable**, and **modular** API automation framework built using `Playwright` and `TypeScript`.  
+Designed for **freelance projects** and **real-world production APIs**, it follows industry best practices with a clean architecture, reusable API clients, and flexible test execution.
 
+---
 
-✨ Features
-✅ Playwright API Testing – End-to-end API automation with APIRequestContext
+## 🔑 Key Features
+- Built with `Playwright` + `TypeScript` using **APIRequestContext**
+- Clean, modular folder structure with clear **naming conventions**
+- Dedicated **Base API Layer** with reusable `GET`, `POST`, `PUT`, `PATCH`, `DELETE`
+- Supports multiple test types: `@smoke`, `@regression`
+- **Chained API Flows** (Auth → CRUD → Search) for real-world coverage
+- Centralized **test data**, **messages**, and **status codes**
+- **Fixtures** for easy API client injection into tests
+- Fully **configurable headers** & token-based authentication
+- Auto-generates **HTML reports** with Playwright
+- Simple execution via pre-defined `npm` commands
 
-✅ Reusable Base API Layer – Common GET, POST, PUT, PATCH, DELETE methods
+---
 
-✅ Modular API Clients – JSONPlaceholder & DummyJSON APIs implemented
+## 📁 Folder Structure Overview
+Organized for modularity, scalability, and ease of maintenance — following best practices for Playwright API automation.
 
-✅ Fixtures for API Clients – Easy injection of API objects into tests
+```bash
+playwright-api-portfolio/
+├── apis/                          # API clients
+│   ├── baseApi.ts                 # Base class (GET, POST, PUT, PATCH, DELETE)
+│   ├── dummyjson/                 # DummyJSON API clients
+│   │   └── usersApi.ts
+│   └── jsonplaceholder/           # JSONPlaceholder API clients
+│       └── usersApi.ts
+│
+├── tests/                         # API test suites
+│   ├── dummyjson/
+│   │   └── chaining.spec.ts       # Auth + CRUD + Search flow
+│   └── jsonplaceholder/
+│       └── usersCrud.spec.ts      # Full CRUD test suite
+│
+├── common/                        # Shared constants & utils
+│   ├── messages.ts                # Standardized messages/logs
+│   ├── statusCodes.ts             # HTTP status codes
+│   ├── endpoints.ts               # API endpoints
+│   ├── headers.ts                 # Header builder
+│   └── testData.ts                # Centralized test payloads
+│
+├── fixtures.ts                    # Custom Playwright fixtures for API clients
+├── playwright.config.ts           # Playwright configuration
+├── package.json
+└── README.md
+```
+---
 
-✅ Authentication Handling – Example login + token usage (DummyJSON)
+## 🧪 Test Case Naming Standard
+Format: @tag TC-ID should <action>
 
-✅ Chained API Flows – Realistic test flows (Auth → CRUD → Search)
+Example:
+```bash
+test('@smoke TC-001 should create a new user successfully', async ({ jsonUsersApi }) => { ... });
+```
+This ensures test cases are traceable, action-focused, and client-friendly.
 
-✅ Centralized Test Data – testData.ts for payloads & reusability
+---
 
-✅ Standardized Messages & Status Codes – Consistency across tests
+## ⚙️ Configuration Details
+- baseURL: Configurable per environment (DummyJSON, JSONPlaceholder, etc.)
+- headers.ts: Dynamically injects auth tokens and common headers
+- fixtures.ts: Provides ready-to-use API clients in tests
+- video, screenshot: Available if combined with UI + API flows
+- Tagging supported → run targeted test sets easily
 
-✅ Scalable Folder Structure – Industry-standard separation of concerns
+---
 
-✅ Tagging Support (@smoke, @regression) – Run targeted test sets
+## 📦 Available NPM Scripts
+```bash
+Command	Description
+npm run test	            Run all tests in headless mode
+npm run test:smoke	      Run only tests tagged with @smoke
+npm run test:regression	  Run only tests tagged with @regression
+```
+All scripts are pre-configured in package.json for client convenience.
 
+---
 
-📂 Project Structure
-apis/                   
-  baseApi.ts            # Abstract base class (GET, POST, PUT, PATCH, DELETE)
-  dummyjson/            # DummyJSON specific APIs
-    usersApi.ts
-  jsonplaceholder/      # JSONPlaceholder specific APIs
-    usersApi.ts
+## 🧭 Coding Best Practices Followed
+- No hardcoded values — all data comes from testData.ts
+- Reusable methods across API clients via BaseApi
+- Fixtures inject APIs instead of new everywhere
+- Consistent naming conventions for files & tests
+- .gitignore pre-configured to avoid clutter (node_modules, logs, reports)
 
-tests/                  
-  dummyjson/
-    chaining.spec.ts    # Auth + CRUD + Search flow
-  jsonplaceholder/
-    usersCrud.spec.ts   # Full CRUD test suite
+---
 
-common/                 
-  messages.ts           # Standard messages/logs
-  statusCodes.ts        # HTTP status codes
-  endpoints.ts          # Base URLs & endpoints
-  headers.ts            # Auth header builder
-  testData.ts           # Test payloads & data
+## 🧩 Sample Features Covered
+- Authentication (DummyJSON login + token usage)
+- CRUD operations on users (Create, Read, Update, Delete)
+- Chained flows → Login → Create User → Update → Delete → Search
+- JSONPlaceholder users API → Example of CRUD coverage
+- Status codes & message validations
 
-fixtures.ts             # Custom Playwright fixtures for API clients
-Playwright.config.ts    # Contains all required configurations
-package.json            # Contains required dev dependencies
+---
 
+## 📊 Test Reports
+- Rich HTML report auto-generated by Playwright under /playwright-report
+- Each test includes logs, steps, and traces
+- Can be extended to JUnit/JSON reporters for CI/CD pipelines
 
-🚀 Getting Started
-1️⃣ Clone the repo
-git clone https://github.com/markadvk/playwright-api-portfolio.git
-cd playwright-api-portfolio
+---
 
-2️⃣ Install dependencies
-npm install
+## Features:
+- Structured CRUD & Auth test coverage
+- Status, Priority, and Execution filters
+- Auto-calculated metrics + visual dashboard
 
-3️⃣ Run tests
-# Run all tests
-npx playwright test
+---
 
-# Run only smoke tests
-npx playwright test --grep @smoke
+## 🤝 What I Can Offer Clients
+- Build API automation frameworks from scratch with Playwright
+- Convert Postman collections into maintainable automated tests
+- Integrate API tests into CI/CD pipelines (GitHub Actions, Jenkins, etc.)
+- Add both UI + API hybrid testing for full E2E coverage
+- Deliver production-ready, scalable automation suites
 
-4️⃣ View reports
-npx playwright show-report
+---
 
+## 🌐 Demo APIs Used
+This framework demonstrates API testing on:
 
-📊 Example Test Flow
+- 🔗 DummyJSON → https://dummyjson.com (Auth, CRUD, Search)
 
-✔ Login & Auth Token Generation
-✔ CRUD operations on Users
-✔ Search API validation
+- 🔗 JSONPlaceholder → https://jsonplaceholder.typicode.com (Mock CRUD APIs)
 
-This mimics real-world client scenarios, showing how API flows are automated and verified step by step.
+---
 
+## ✅ Conclusion
+This framework is battle-tested, highly maintainable, and ready to scale.
+It’s ideal for clients seeking professional-grade API automation with clean code, modular design, and full test coverage.
 
-🎯 Why Clients Will Love This
-Feature	Benefit
-♻️ Reusable & Scalable	Add new APIs easily by extending BaseApi
-🛠 Maintainable	Shared constants, test data, and status codes
-📊 Professional Reports	Playwright’s rich HTML reports
-🔗 Real-World Examples	Auth, CRUD, search, chained flows
-🚀 Freelancing Ready	Adaptable to any REST API project quickly
-💡 What I Can Do for You
-
-As a freelancer, I can help clients:
-
-🏗 Build custom API testing frameworks from scratch
-
-🔗 Integrate API automation with Playwright
-
-⚙️ Set up CI/CD pipelines (GitHub Actions, Jenkins, etc.)
-
-📑 Provide detailed test reports for QA sign-off
-
-📦 Deliver scalable, maintainable automation suites
-
-
-📬 Contact Me
-
-If you’re looking for a skilled Automation Engineer to build or enhance your testing framework:
-👉 LinkedIn(yet to add)
- • Email(yet to add)
- • Portfolio(yet to add)
-
-✨ With this repo, you’ll see not just my technical skills, but also how I structure automation projects for professional delivery.
+💬 Need help automating your APIs?
+📬 Reach out via Upwork, LinkedIn, or GitHub — your automation journey starts here 🚀
