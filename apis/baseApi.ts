@@ -1,3 +1,9 @@
+/**
+ * VerifyKoders Automation Framework
+ * Author: VerifyKoders (Geetanjali)
+ * Licensed under MIT License
+ */
+
 import { APIRequestContext, APIResponse } from '@playwright/test';
 
 export abstract class BaseApi {

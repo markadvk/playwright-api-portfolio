@@ -1,4 +1,7 @@
 # 🚀 Playwright API Test Automation Framework
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
 A **robust**, **scalable**, and **modular** API automation framework built using `Playwright` and `TypeScript`.  
 Designed for **freelance projects** and **real-world production APIs**, it follows industry best practices with a clean architecture, reusable API clients, and flexible test execution.
 
@@ -136,4 +139,23 @@ This framework is battle-tested, highly maintainable, and ready to scale.
 It’s ideal for clients seeking professional-grade API automation with clean code, modular design, and full test coverage.
 
 💬 Need help automating your APIs?
-📬 Reach out via Upwork, LinkedIn, or GitHub — your automation journey starts here 🚀
+
+📬 [Contact Me](https://markadvk.github.io/verifykoders/contact/) — your automation journey starts here 🚀
+
+---
+
+## 🔖 About / Contact
+
+Maintained by VerifyKoders — QA & Automation Portfolio
+
+🌐 Website: https://markadvk.github.io/verifykoders/
+
+▶️ YouTube: https://www.youtube.com/@verifykoders
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](./LICENSE)
+
+© 2025 VerifyKoders. All rights reserved.
